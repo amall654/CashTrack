@@ -7,3 +7,25 @@
 @media(max-width:760px){.header{height:auto;min-height:95px;flex-wrap:wrap;gap:19px;padding-block:20px}.header nav{order:3;justify-content:center;width:100%;gap:30px;border-top:1px solid var(--line);padding-top:16px;font-size:12px}.header .brand{font-size:23px}.hero{grid-template-columns:1fr;padding-top:35px;padding-bottom:65px;gap:60px}.hero-copy{text-align:center}.hero-copy>p{margin-inline:auto;max-width:440px}h1{font-size:49px;line-height:1.4}.hero-actions,.hero-notes{justify-content:center}.hero-actions{gap:25px}.preview-scene{width:min(460px,100%);margin:auto}.dashboard{transform:rotate(-1deg)}.sparkle{right:0}.floating-note{left:-5px;bottom:-4px}.promise-inner>span{font-size:19px;gap:7px}.promise-inner b{font-size:11px}.section{padding-block:58px}.section-heading h2{font-size:26px}.feature-grid{grid-template-columns:1fr;gap:15px}.feature{padding:25px}.feature-icon{margin-bottom:13px}.feature-caption{margin-top:16px}.how-inner{grid-template-columns:1fr;gap:20px}.how-title{text-align:center}.how-title h2{font-size:33px}.how-section{padding-block:45px}.steps{max-width:450px;width:100%;margin:auto}.cta h2{font-size:28px}.footer{flex-wrap:wrap;justify-content:center;gap:20px 25px}.footer p{display:none}.footer>span{font-size:10px}}
 @media(max-width:380px){.container{width:calc(100% - 32px)}h1{font-size:42px}.header .button{padding:9px 12px;gap:9px}.hero-notes{gap:12px;font-size:10px}.dashboard{padding:16px}.chart-area{gap:13px;padding-inline:0}.hero-actions{gap:15px}.hero-actions .button{font-size:13px;padding-inline:16px}.hero-actions .text-link{font-size:12px}.section-heading h2{font-size:24px}.floating-note{padding:10px 13px}.donut{width:100px;height:100px}.donut>div{width:73px;height:73px}}
 @media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}*,*:before,*:after{transition:none!important}}
+
+/* Expense form validation and small-screen dialog scrolling. */
+#expense-dialog{max-height:calc(100dvh - 32px);overflow-y:auto}
+.field-error{display:block;color:#a52b27;font-size:12px;line-height:1.7;margin-top:4px}
+.field-error:empty{display:none}
+#expense-form [aria-invalid="true"]{border-color:#a52b27}
+.sr-only{position:absolute;width:1px;height:1px;padding:0;margin:-1px;overflow:hidden;clip-path:inset(50%);white-space:nowrap;border:0}
+
+/* Shared UI components, ready for the final data controller. */
+[hidden]{display:none!important}
+.empty-state{text-align:center;padding:24px 12px;border:1px dashed #b9cdb6;border-radius:12px;background:#f8fbf5}
+.empty-state strong{font-size:15px}.empty-state p,.chart-empty{font-size:12px;line-height:1.9;color:var(--muted);margin:8px 0 12px}
+.chart-empty{text-align:center}.secondary-button,.edit-expense{min-height:44px;padding:8px 14px;border:1px solid #cbdac5;border-radius:8px;color:var(--green);background:#f3f8ef;font:inherit}
+.edit-expense{font-size:12px;flex-shrink:0}.expense-row time{font-size:10px;color:var(--muted);direction:ltr;text-align:right}
+.expense-row strong{font-size:12px}.expense-row small{font-size:10px}.expense-list{max-height:340px;overflow-y:auto;overscroll-behavior:contain}
+.add-button{min-height:44px;font-size:12px}.legend{max-width:none;min-width:0}.legend>div{font-size:11px}.legend .dot{flex-shrink:0}.legend span{overflow-wrap:anywhere}
+.form-actions{display:flex;gap:10px;margin-top:22px}.form-actions .button{margin:0;flex:1}.form-actions .secondary-button{min-width:75px}
+#expense-form input,#expense-form select{font-size:16px;min-height:44px}.close-button{min-width:44px;min-height:44px}
+#form-feedback:not(:empty){position:static;display:block;width:auto;height:auto;margin:12px 0;color:#a52b27;clip-path:none;white-space:normal;font-size:13px}
+@media(max-width:760px){.dashboard{transform:none}.preview-scene{min-width:0}.chart-area{gap:16px}.floating-note{position:static;transform:none;margin:14px auto 0;width:fit-content}.hero-actions{flex-wrap:wrap}}
+@media(max-width:400px){.chart-area{flex-direction:column}.legend{width:100%}.legend>div{margin:8px 0}.expense-row{flex-wrap:wrap}.expense-row>div{min-width:100px}.expense-row>b{font-size:11px}.dashboard{padding:14px}.recent-heading{flex-wrap:wrap}dialog{padding:20px}.form-actions{flex-wrap:wrap}}
+@media(max-width:760px){.scene-orbit{display:none}.preview-scene:before{inset:0;transform:none;border-radius:24px}}
