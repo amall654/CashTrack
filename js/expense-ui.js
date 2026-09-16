@@ -34,7 +34,13 @@
       edit.textContent = 'تعديل';
       edit.setAttribute('aria-label', `تعديل ${expense.description || expense.category}`);
       edit.addEventListener('click', () => window.CashTrackForm.openEdit(expense));
-      row.append(details, amount, edit);
+      const remove = document.createElement('button');
+      remove.type = 'button';
+      remove.className = 'delete-expense';
+      remove.textContent = 'حذف';
+      remove.setAttribute('aria-label', `حذف ${expense.description || expense.category}`);
+      remove.addEventListener('click', () => document.dispatchEvent(new CustomEvent('expense:delete', { detail: { id: expense.id } })));
+      row.append(details, amount, edit, remove);
       list.append(row);
     }
     window.CashTrackChart.render(expenses, { filtered });
